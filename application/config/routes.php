@@ -17,3 +17,20 @@ $route['guardar_producto'] = 'Productos/guardar';
 $route['editarProducto'] = 'Productos/editar';
 $route['updateProducto'] = 'Productos/update';
 $route['eliminarProducto'] = 'Productos/eliminar';
+
+
+// rutas del cliente
+$route['cliente'] = 'ClienteController/index';
+$route['guardar_cliente'] = 'ClienteController/guardar'; 
+$route['editarCliente'] = 'ClienteController/editar';
+$route['updateCliente'] = 'ClienteController/update';
+$route['eliminarCliente'] = 'ClienteController/eliminar';
+
+// rutas del venta
+
+$route['venta'] = 'VentaController/index';
+$route['buscarCliente'] = 'VentaController/buscarCliente';
+$route['guardar_venta'] = 'VentaController/guardar'; 
+$route['editarventa'] = 'VentaController/editar';
+$route['updateventa'] = 'VentaController/update';
+$route['eliminarventa'] = 'VentaController/eliminar';

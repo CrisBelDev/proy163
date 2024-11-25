@@ -4,11 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($title) ? $title : "Mi Aplicación" ?></title>
+    <title><?= isset($title) ? $title : "Sistema inventarios" ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
+    <!-- CSS de DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JS de DataTables -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+
+<!-- CSS y JS de Botones para DataTables con Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+
+    
+    
 </head>
 <body>
 
@@ -27,6 +45,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="productos">productos</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="cliente">Clientes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="venta">Ventas</a>
+                    </li>
                     <!-- Agrega más enlaces según lo necesites -->
                 </ul>
             </div>
@@ -44,5 +70,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

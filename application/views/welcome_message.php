@@ -28,10 +28,10 @@
 
 
 
-
-    <!-- Tabla -->
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Lista de usuarios</h1>
+        <table id="miTabla" class="table table-striped table-bordered" style="width:100%">
+            <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
@@ -39,8 +39,8 @@
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <?php foreach($datos as $data): ?>
             <tr>
                 <td scope="row"><?= $data->id ?></td>
@@ -60,6 +60,21 @@
                 </td>
             </tr>
             <?php endforeach; ?>
-        </tbody>
-    </table>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Inicializar DataTables con Bootstrap 5
+        $(document).ready(function () {
+        $('#miTabla').DataTable({
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+            },
+            dom: 'Bfrtip',
+            buttons: ['copy', 'excel', 'pdf', 'print']
+        });
+    });
+    </script>
 </div>

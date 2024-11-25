@@ -1,45 +1,31 @@
-<!-- application/views/productos.php -->
-<h1>Registrar Medicamento</h1>
+<h1>Realizar Venta</h1>
 
-<!-- Formulario de Registro de Producto -->
-<div class="card bg-light shadow-lg p-4">
-    <form action="<?= base_url('guardar_producto') ?>" method="post" class="row g-3">
-        
-        <!-- Campo Nombre -->
-        <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre del Medicamento</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre del producto" required>
+<!-- Buscador de Cliente -->
+<div class="card bg-light shadow-lg p-4 mb-4">
+    <h2>Buscar Cliente</h2>
+    <form action="<?= base_url('buscarCliente') ?>" method="post" class="row g-3">
+        <div class="col-md-8">
+            <label for="buscar_ci" class="form-label">C.I. del Cliente</label>
+            <input type="text" name="buscar_ci" id="buscar_ci" class="form-control" placeholder="Ingrese el C.I. del cliente" required>
         </div>
-        
-        <!-- Campo Descripción -->
-        <div class="col-md-6">
-            <label for="descripcion" class="form-label">Descripción</label>
-            <textarea name="descripcion" id="descripcion" class="form-control" placeholder="Descripción del producto" rows="3" required></textarea>
-        </div>
-        
-        <!-- Campo Precio -->
-        <div class="col-md-4">
-            <label for="precio" class="form-label">Precio</label>
-            <input type="number" step="0.01" name="precio" id="precio" class="form-control" placeholder="Precio del producto" required>
-        </div>
-        
-        <!-- Campo Stock -->
-        <div class="col-md-4">
-            <label for="stock" class="form-label">Stock</label>
-            <input type="number" name="stock" id="stock" class="form-control" placeholder="Cantidad en stock" required>
-        </div>
-
-        <!-- Botón de Enviar -->
         <div class="col-md-4 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary w-100">Registrar Producto</button>
+            <button type="submit" class="btn btn-primary w-100">Buscar</button>
         </div>
-
     </form>
+
+    <?php if (isset($cliente)): ?>
+        <?php if ($cliente): ?>
+            <div class="alert alert-success mt-3">
+                Cliente encontrado: <strong><?= $cliente->nombre . " " . $cliente->paterno . " " . $cliente->materno ?></strong>
+            </div>
+        <?php else: ?>
+            <div class="alert alert-danger mt-3">
+                Cliente no encontrado. <a href="<?= base_url('registrocliente') ?>" class="alert-link">Registre al cliente aquí</a>.
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
 </div>
 
-<hr>
-
-<!-- Tabla de Productos -->
 <div class="container my-5">
         <h1 class="text-center mb-4">Lista de Productos</h1>
         <table id="miTablaProductos" class="table table-striped table-bordered" style="width:100%">
@@ -93,3 +79,6 @@
         });
     });
     </script>
+
+
+
